@@ -197,17 +197,16 @@ export async function submitQuestion(messages: BaseMessage[], chatId: string) {
     const app = workflow.compile({ checkpointer });
 
     // Run the graph now and stream the responses that we've got from hitting our model (Claude)
-    const stream = await app.streamEvents(
-        { 
-            messages: cachedMessages 
-
+    const stream = app.streamEvents(
+        {
+            messages: cachedMessages
         },
         {
-          version: "v2",
-          configurable: { thread_id: chatId },
-          streamMode: "messages",
-          runId: chatId,
+            version: "v2",
+            configurable: { thread_id: chatId },
+            streamMode: "messages",
+            runId: chatId,
         }
-      );
+    );
       return stream; 
 };
