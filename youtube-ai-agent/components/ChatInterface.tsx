@@ -37,11 +37,9 @@ function ChatInterface({ chatId, initialMessages}: ChatInterfaceProps) {
                 if (done) break;
                 const chunk = new TextDecoder().decode(value);
                 await onChunk(chunk);
-            }
-        } catch (error) {
-            
-        } 
-        
+                }
+            } catch (error) {    
+        }   
     }
 
     // this endRef scrolls to the bottom of the messsage list

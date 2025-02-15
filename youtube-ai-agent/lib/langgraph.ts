@@ -180,7 +180,7 @@ function addCachingHeaders(messages: BaseMessage[]): BaseMessage[] {
         }
     }
     
-        return cachedMessages;
+    return cachedMessages;
 }
 
 

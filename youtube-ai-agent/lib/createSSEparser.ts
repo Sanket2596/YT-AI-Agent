@@ -1,7 +1,6 @@
 import { SSE_DONE_MESSAGE, StreamMessageType, SSE_DATA_PREFIX, StreamMessage } from "./types";
 
 
-
 export const createSSEParser = () => {
     let buffer = "";
 
